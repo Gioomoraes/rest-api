@@ -7,3 +7,10 @@ app.use(
     }))
 
     app.use(express.json())
+
+    app.get('/', (req, res) =>{
+        res.json({message: 'primeira rota'})
+
+    })
+
+    app.listen(3001)
