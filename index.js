@@ -8,13 +8,6 @@ app.use(
 
     app.use(express.json())
 
-    app.post('/createproduct', (req, res) => {
-        const name = req.body.name
-        const price = req.body.price
-
-        console.log(name)
-        console.log(price)
-    })
 
     app.get('/', (req, res) =>{
         res.json({message: 'primeira rota'})
