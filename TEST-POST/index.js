@@ -1,29 +1,24 @@
 const express = require('express')
 const app = express()
 
-app.use(
-    express.urlencoded({
-        extended: true
-    }))
 
-    app.use(express.json())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-    app.post('/createproduct', (req, res) => {
-        const name = req.body.name
-        const price = req.body.price
+app.post('/createproduct', (req, res) => {
+  const { name, price } = req.body
 
-        console.log(name)
-        console.log(price)
+  console.log(name, price)
 
-          res.status(201).json({
-    message: 'Produto recebido',
-    product: { name, price }
+  res.status(201).json({
+    message: `o produto ${name} foi criado`
   })
-    })
+})
 
-    app.get('/', (req, res) =>{
-        res.json({message: 'primeira rota'})
+app.get('/', (req, res) => {
+  res.json({ message: 'primeira rota' })
+})
 
-    })
-
-    app.listen(3001)
+app.listen(3005, () => {
+  console.log('TEST-POST rodando na porta 3005')
+})
