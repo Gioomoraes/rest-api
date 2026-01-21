@@ -16,9 +16,9 @@ app.post('/createproduct', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.json({ message: 'primeira rota' })
+  res.status(200).json({ message: 'primeira rota' })
 })
 
-app.listen(3005, () => {
-  console.log('TEST-POST rodando na porta 3005')
+app.listen(3006, () => {
+  console.log('TEST-POST rodando na porta 3006')
 })
